@@ -8,12 +8,16 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.0",
     "bootstrap": "^3.3.6",
+    "connect-mongo": "^1.1.0",
+    "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
+    "express-session": "^1.13.0",
     "jade": "^1.11.0",
     "moment": "^2.11.2",
     "mongoose": "^4.4.4",
     "node-gyp": "^3.3.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "util": "^0.10.3"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
