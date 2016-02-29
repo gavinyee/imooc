@@ -3,6 +3,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+var morgan = require('morgan');
 var session = require('express-session');
 var mongoStore = require('connect-mongo')(session);
 var port = process.env.PORT || 3000;
@@ -26,6 +27,13 @@ app.use(session({
 		collection: 'sessions'
 	})
 }));
+
+if ('development' === app.get('env')) {
+	app.set('showStackError', true);
+	app.use(morgan(':method :url :status'));
+	app.locals.pretty = true; //使网页的源代码不是被压缩过的，而是格式化过的，可读性更好
+	mongoose.set('debug', true);
+}
 
 require('./config/routes')(app);
 
